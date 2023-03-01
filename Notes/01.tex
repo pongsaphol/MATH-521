@@ -1,0 +1,62 @@
+\chapter{Intro to naive set theory}
+
+\begin{definition}
+  We call $B$ is a \textbf{subset} of a set $A$, $B \subseteq A$ if for every $x \in B$, $x \in A$.
+
+  We call $B$ is a \textbf{proper subset} of a set $A$, $B \subsetneq A$ if $B \subseteq A$ and $B \neq A$.
+\end{definition}
+
+\begin{definition}
+  empty set denoted as $\emptyset$ 
+\end{definition}
+
+\begin{definition}
+  Given $A$, a set,  
+  \[P(A) = \{B \mid B \subseteq A\}\]
+  called \textbf{power set} of $A$.
+\end{definition}
+
+\section{Cardinality}
+\begin{definition}
+  Given a set $A, B$, then if there exists bijection from $A$ to $B$,
+  then $A$ and $B$ have the same \textbf{cardinality}, denoted as $|A| = |B|$.
+\end{definition}
+
+\begin{definition}
+  If there is an injection from $A$ to $B$ then we write $|A| \le |B|$.
+If $|A| \le |B|$ and $|A| \neq |B|$ then we write $|A| < |B|$.
+\end{definition}
+
+\begin{theorem}
+  Let $A$ and $B$ be two sets, then either $|A| \le |B|$, or $|B| \le |A|$.
+Furthermore, if $|A| \le |B|$ and $|B| \le |A|$ then $|A| = |B|$.
+\end{theorem}
+
+\begin{theorem}
+  Let $A$ be a set, then $|A| < |P(A)|$.
+\end{theorem}
+
+\subsection{Finite set and infinite set}
+
+\begin{theorem}
+Let $A$ be a set. The followings are equivalent:
+\begin{enumerate}
+  \item There is a bijection between $A$ and a proper subset of $A$.
+  \item There is an injection from $\NN$ to $A$.
+  \item There isn't a bijection from $A$ to $\{x \in \NN \mid x < n\}$.
+\end{enumerate}
+\end{theorem}
+
+\begin{definition}
+  If a set A satisfies any of the 3 conditions in the theorem
+above we call it an \textbf{infinite set}. Otherwise we call it a \textbf{finite set}.
+\end{definition}
+
+\subsection{Countable infinite set}
+
+\begin{definition}
+  If $|A| = |\NN|$, we call $A$ a \textbf{countable infinite set}. If
+  $|A| > |\NN|$ we call $A$ an \textbf{uncountable set}.
+\end{definition}
+
+

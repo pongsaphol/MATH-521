@@ -1,0 +1,67 @@
+\chapter{Real Numbers}
+\section{Ordered fields}
+
+\begin{definition}
+  A set $F$, $0, 1 \in F$, $+, \times: F \times F \to F$ and a linear order $\le$ called an \textbf{ordered field} if it satisfies
+  \begin{itemize}
+    \item $(F, +)$ is a commutative group with identity $0$.
+    \item $(F, \times)$ is a commutative monoid with identity $1$.
+    \item for any $a, b, c \in F, a(b + c) = ab + ac$
+    \item if $a \le b$ then $a + c \le b + c$ for any $c \in F$.
+    \item if $0 \le a, 0 \le b$ then $0 \le ab$.
+  \end{itemize}
+\end{definition} 
+
+\begin{lemma}
+  Let $F$ be an ordered field, for any $a, b \in F$
+  \begin{itemize}
+    \item if $a \le b$ then $-b \le -a$
+    \item if $a > b > 0$ then $0 < a^{-1} < b^{-1}$
+  \end{itemize}
+\end{lemma}
+
+\begin{theorem}
+  Let $F$ be an ordered field, $a < b$, $a, b \in F$
+  Then we can define intervals
+  \begin{itemize}
+    \item $[a, b] = \{x \in F \mid a \le x \le b\}$
+    \item $[a, b) = \{x \in F \mid a \le x < b\}$
+    \item $(a, b] = \{x \in F \mid a < x \le b\}$
+    \item $(a, b) = \{x \in F \mid a < x < b\}$
+  \end{itemize}
+  The \textbf{length} of these intervals are defined as $b - a$
+\end{theorem}
+
+\section{Least upper bound property}
+\begin{definition}
+  least upper bound or supremum of $A$ denote as $\sup(A)$, that satisfies
+  \begin{itemize}
+    \item for any $a \in A, a \le \sup(A)$
+    \item if for any $m \in F$ and for any $a \in A$, $a \le m$ then $\sup(A) \le m$
+  \end{itemize}
+\end{definition}
+
+\section{Archimedean property of real numbers}
+\begin{theorem}[Archimedean property]
+  for any $a,b \in \RR$, $a, b > 0$ there exists $n \in \NN$ such that 
+  \[an > b\]
+\end{theorem}
+
+\begin{theorem}
+  for any $x \in \RR$ there exists $n \in \ZZ, q \in [0, 1)$ such that 
+  \[x = n + q\]
+\end{theorem}
+
+\begin{theorem}[$\QQ$ dense in $\RR$]
+  for any $x \in \RR$, for any $\eps > 0$ there exists $q \in \QQ$ such that
+  \[q \in (x - \eps, x + \eps)\]
+\end{theorem}
+
+\section{Infinite decimal expansions}
+
+\begin{definition}
+  There is a bijection between $[0, 1)$ and the set
+  \[
+    S = \{a \in \{0, 1, \dotsc, 9\}^{\NN} \mid \forall n, \exists m > n, a(m) < 9\}
+  \]
+\end{definition}

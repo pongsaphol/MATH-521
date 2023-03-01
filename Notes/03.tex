@@ -1,0 +1,197 @@
+\chapter{Metric Spaces}
+\section{Definition}
+\begin{definition}
+  $(X, d), d: X \times X \to [0, \infty)$ is a metric space if: $\forall x,y,z \in X$
+  \begin{itemize}
+    \item $d(x,y) = 0 \iff x = y$
+    \item $d(x,y) = d(y,x)$
+    \item $d(x,y) \leq d(x,z) + d(z,y)$
+  \end{itemize}
+\end{definition}
+
+\begin{theorem}
+  Given $(X, d)$ metric space, $(X, f \circ d)$ is a metric space if
+  \begin{itemize}
+    \item $f(x) = 0 \iff x = 0$
+    \item $f(x+y) \leq f(x) + f(y)$
+    \item $f$ is non-decreasing
+  \end{itemize}
+\end{theorem}
+
+\begin{theorem}
+  Let $(X, d_x)$ and $(Y, d_y)$ be metric spaces.
+  Then $(X \times Y, d_{\sup})$ is a metric space where
+  \[d_{\sup}((x, y), (x', y')) = \max(d_x(x, x'), d_y(y, y'))\]
+\end{theorem}
+
+\begin{theorem}
+  Given $(X, d)$ metric space, and $S$ be non-empty set. Let
+  \[Y = \{f \in Map(S, X) \mid diam(f(S)) < \infty \}\]
+  and 
+  \begin{align*}
+    d_{\sup}: Y \times Y &\to [0, \infty)\\
+    f, g&\mapsto \sup\{d(f(S), g(S)) \mid s \in S\}
+  \end{align*}
+  Then $(Y, d_{\sup})$ is a metric space.
+\end{theorem}
+
+\section{Open sets and closed sets}
+\subsection{Definition}
+\begin{definition}[Open Ball]
+  Let $(X, d)$ be a metric space.
+  \[B_X(x, r) = \{y \in X \mid d(x,y) < r\}\]
+  is called an open ball centered at $x$ with radius $r$.
+\end{definition}
+\begin{definition}[Open Set]
+  Let $(X, d)$ be a metric space.
+  $A \subseteq X$ is called an open set if 
+  \[\forall a \in A, \exists r > 0, B_X(a, r) \subseteq A\]
+\end{definition}
+\begin{definition}[Closed Set]
+  Let $(X, d)$ be a metric space.
+  $A \subseteq X$ is called an closed set if 
+  \[\forall a \in X\setminus A, \exists r > 0, B_X(a, r) \cap A = \emptyset\]
+  (or equivalently, $X\setminus A$ is an open set)
+\end{definition}
+
+\begin{theorem}
+  Any open ball is open
+\end{theorem}
+
+\begin{theorem}
+  Any closed ball is closed.
+  Furthermore any set consisting of a single point is closed.
+\end{theorem}
+
+\subsection{Basic properties}
+\begin{theorem}
+  The union of a set of open sets is open.
+\end{theorem}
+
+\begin{definition}
+  Let $(X, d)$ be a metric space, $A \subseteq X$. We define:
+  \begin{itemize}
+    \item The \textbf{closure} of $A$ as
+    \[
+      \overline{A}= \bigcap\{V \subseteq X \mid V \text{ closed }, A \subseteq V \}
+    \]
+    \item The \textbf{interior} of $A$ as
+    \[
+      A^\circ = \bigcup\{U \subseteq X \mid U\text{ open }, U \subseteq A\}
+    \]
+    \item The \textbf{boundary set} of $A$ is
+    \[
+      \partial A = \overline{A} \setminus A^\circ
+    \]
+\end{itemize}
+\end{definition}
+
+\begin{theorem}
+  The intersection of finitely many open sets is open
+\end{theorem}
+
+\begin{theorem}
+  A non-empty subset of a metric space $(X, d)$ is open $\iff$ it is
+a union of open balls
+\end{theorem}
+
+\subsection{Openness in subspaces}
+
+\begin{theorem}
+  If $(X, d)$ is a metric space, $(Y, d|_{Y \times Y} )$ a subspace.
+  \begin{itemize}
+    \item $A \subseteq Y$ is open in $Y$ $\iff$ there is some open set $A'$ in $X$ where $A = A' \cap Y$
+    \item $A \subseteq Y$ is closed in $Y$ $\iff$ there is some closed set $A'$ in $X$ where $A = A' \cap Y$
+  \end{itemize}
+\end{theorem}
+\subsection{Denseness}
+
+\begin{definition}
+  A subset $A \subseteq X$ is dense if any non-empty open subset of
+$X$ has non-empty intersection with $A$.
+\end{definition}
+
+\subsection{Open sets and closed sets in $\RR$}
+
+\begin{lemma}
+  Let $d_e(x, y) = |x - y|$
+  \begin{itemize}
+    \item  Any finite open interval $(a, b)$, where $b > a$, is open
+    under metric $d_e$.
+    \item Any infinite open interval $(-\infty, a), (a, \infty)$ or $(-\infty, \infty)$ must be open under
+    metric $d_e$.
+  \end{itemize}
+\end{lemma}
+
+\begin{theorem}
+  If $A \subset \RR$ is non-empty and $sup(A) < \infty$. Then
+  \begin{itemize}
+    \item If $A$ is open, then $\sup(A) \notin A$.
+    \item If $A$ is closed, then $\sup(A) \in A$.
+  \end{itemize}
+\end{theorem}
+
+\begin{theorem}
+  $A \subseteq \RR$, $A \neq \emptyset$, is open under $d(x, y) = |x-y|$ $\iff$ 
+  it is the disjoint union of finite or countably infinitely many (finite or infinite) open intervals
+\end{theorem}
+
+\section{Continuity}
+
+\subsection{Definition}
+
+\begin{definition}
+  Given $(X, d)$ and $(Y, d')$ metric spaces, a function $f: X \to Y$ 
+  \begin{itemize}
+    \item is called continuous if for any open set $U \subseteq Y, f^{-1}(U)$ is open in $X$
+    \item is called continuous at $x \in X$ if for any open set $U \subseteq Y, f(x) \in U$,
+    there is an open set $V \subseteq X, x \in V$ such that $f(V) \subseteq U$ 
+  \end{itemize}
+\end{definition}
+
+\subsection{Localness and $\eps-\delta$ characterization}
+
+\begin{theorem}
+  $f: X \to Y$ is continuous $\iff$ for any $x \in X$, $f$ is continuous at $x$.
+\end{theorem}
+
+\begin{theorem}
+  $f: X \to Y$ is continuous at $x \in X$ $\iff$ for any $\eps > 0$,
+  there exists $\delta > 0$ such that 
+  \[f(B_X(x, \delta)) \subseteq B_Y(f(x), \eps)\]
+\end{theorem}
+
+\begin{theorem}
+  A map $f$ from $(X, d)$ to $(Y, d')$ is continuous if for any $x, y \in X$,
+  for any $\eps > 0$, there exists $\delta > 0$ such that 
+  \[d(x, y) < \delta \implies d'(f(x), f(y)) < \eps\]
+\end{theorem}
+
+\begin{definition}
+  If a bijection between two metric space and its inverse are
+both continuous, we call it a \textbf{homeomorphism}
+\end{definition}
+
+\subsection{Real valued continuous functions}
+
+\begin{theorem}[Intermediate Value Theorem]
+  if $f: [a, b] \to \RR$ is continuous map,
+  $m \in \RR, (f(a) - m)(f(b) - m) < 0$ then there is some 
+  $c \in (a, b)$ such that $f(c) = m$
+\end{theorem}
+
+\section{Compactness}
+
+\begin{definition}
+  A metric space $X$ is called \textbf{compact}, if for every set of open subset 
+  $C$ that $\bigcup C = X$, there is a finite subset $C'$ such that $\bigcup C' = X$
+\end{definition}
+
+\begin{theorem}
+  Any compact metric space has finite diameter
+\end{theorem}
+
+\begin{theorem}
+  If $(X, d)$ is a metric space, $A \subset X$ is compact under the
+subspace metric, then $A$ is closed in $X$.
+\end{theorem}

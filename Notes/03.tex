@@ -188,10 +188,32 @@ both continuous, we call it a \textbf{homeomorphism}
 \end{definition}
 
 \begin{theorem}
-  Any compact metric space has finite diameter
+  $(X, d)$ is compact $\iff$ $\forall C \subseteq \{B_X(x, r) \mid x \in X, r \in (0, \infty)\}$, 
+  $\bigcup C = X \implies \exists C' \subseteq C$ such that $\bigcup C' = X$ and $C'$ is finite
 \end{theorem}
 
 \begin{theorem}
-  If $(X, d)$ is a metric space, $A \subset X$ is compact under the
-subspace metric, then $A$ is closed in $X$.
+  Any compact metric space has finite diameter ($diam(X) < \infty$)
+\end{theorem}
+
+\begin{theorem}
+  If $(X, d)$ is a metric space, $Y \subseteq X$, a non-empty subset, with subspace metric. Then, 
+  $(Y, d|_{Y \times Y})$ is compact $\implies$ $Y$ is closed.
+\end{theorem}
+
+\begin{theorem}
+  If $(X, d)$ is a compact metric space $V \subseteq X$ is closed, then $V$ under subspace metric is also compact
+\end{theorem}
+
+\begin{theorem}
+  $f: (X, d) \to (Y, d')$ is continuous and surjection. 
+  If $X$ is compact, then $Y$ is compact.
+\end{theorem}
+
+\begin{theorem}
+  If $(X, d), (Y, d')$ are both compact metric spaces, then $(X, Y, d_{\sup})$ is also compact
+\end{theorem}
+
+\begin{theorem}
+  A subset of $\RR^n$ is compact $\iff$ it is bounded and closed
 \end{theorem}

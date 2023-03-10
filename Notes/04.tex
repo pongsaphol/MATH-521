@@ -13,3 +13,62 @@
   for $a \in X$ if for any $\eps > 0$, there exists $N$ such that 
   \[n > N \implies a_n \in B_X(a, \eps)\]
 \end{definition}
+
+\begin{theorem}
+  If $\{a_n\}$ converges, the limit is unique
+\end{theorem}
+
+\begin{theorem}
+  If $\{a_n\}$ and $\{b_n\}$ are 2 sequences on $X$.
+  $\exists M \in \NN$ such that $a_n = b_n$ if $n > M$
+  ($a_n = b_n$ for all but finitely many $n$)
+  Then
+  \begin{enumerate}
+    \item $\{a_n\}$ converges $\iff$ $\{b_n\}$ converges
+    \item If $\{a_n\}, \{b_n\}$ converge, then $\lim\limits_{n \to \infty} a_n = \lim\limits_{n \to \infty} b_n$
+  \end{enumerate}
+\end{theorem}
+
+\section{Limit, open sets and closed sets}
+
+\begin{theorem}
+  If $(X, d)$ is a metric space, $\{a_n\}$ a sequence, If $U \subseteq X$ open
+  and $\lim\limits_{n \to \infty} a_n \in U$, then $\exists N \in \NN$ such that 
+  $n > N \implies a_n \in U$ 
+\end{theorem}
+
+\begin{theorem}
+  If $(X, d)$ is a metric space, $\{a_n\}$ a sequence, $\lim\limits_{n \to \infty} a_n = b$,
+  $V \subseteq X$ closed then $a_n \in V\ \forall n \implies b \in V$.
+\end{theorem}
+
+\begin{definition}[isolated point]
+  Let $(X, d)$ be a metric space, $p \in X$, if $\exists r > 0, B_X(p, r) = \{p\}$
+  we call $p$ an \textbf{isolated point}
+\end{definition}
+
+\begin{theorem}
+  if $\lim\limits_{n \to \infty} a_n = p$, $p$ isolated, $\exists N, n > N \implies a_n = p$ 
+  ($a_n = p$ for all but finitely many $n$)
+\end{theorem}
+
+\begin{theorem}
+  $(X, d)$ metric space, $U \subseteq X$, if for any sequence $\{a_n\}$ in $X$
+  $$\lim\limits_{n \to \infty} a_n \in U \implies a_n \in U \text{ for all but finitely many }n$$
+  then $U$ is open
+\end{theorem}
+
+\begin{theorem}
+  $(X, d)$ metric space, $V \subseteq X$, If for any is converged sequence $\{a_n\}$, 
+  $$a_n \in V\ \forall n \in \NN \implies \lim\limits_{n \to \infty} a_n \in V$$
+  then $V$ is closed
+\end{theorem}
+
+\begin{theorem}
+  $f: (X, d) \to (X, d')$ a funciton, for $x \in X$, the following one equivalent.
+  \begin{enumerate}
+    \item $f$ is continuous at $x$
+    \item if $\lim\limits_{n \to \infty} a_n = x$ then $\lim\limits_{n \to \infty} f(a_n) = f(x)$
+    \item if $\lim\limits_{n \to \infty} a_n = x$ then $\lim\limits_{n \to \infty} f(a_n)$ exists
+  \end{enumerate}
+\end{theorem}
